@@ -1,9 +1,32 @@
+init python:
+    def pause(time=None):
+        global _windows_hidden
+
+        if not time:
+            _windows_hidden = True
+
+            renpy.ui.saybehavior(afm=" ")
+            renpy.ui.interact(mouse='pause', type='pause', roll_forward=None)
+
+            _windows_hidden = False
+
+            return
+
+        if time <= 0:
+            return
+
+        _windows_hidden = True
+
+        renpy.pause(time)
+
+        _windows_hidden = False
+
 image bg woods_day = 'bg/woods_day.png'
 image bg woods_night = 'bg/woods_night.png'
 image bg cave_out = 'bg/cave_out.png'
 image bg cave_ins = 'bg/cave_ins.png'
-image bg house = 'bg/room.png'
-image bg room = 'bg/room_rl.png'
+image bg room1 = 'bg/room_rl.png'
+image bg room2 = 'bg/room.png'
 image bg forest_day = 'bg/forest_day.png'
 image bg forest_night = 'bg/forest_night.png'
 image bg forest1 = 'bg/forest_rl1.png'
@@ -45,3 +68,6 @@ define m_name = "Myst"
 define cat_name = "Cat"
 define mons_name = "Monster"
 define mom_name = "Mother"
+
+define badend2 = False
+
