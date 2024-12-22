@@ -99,6 +99,12 @@ define dissolve_scene_full = MultipleTransition([
     Solid("#000"), Dissolve(1.0),
     True])
 
+define dissolve_scene_full_white = MultipleTransition([
+    False, Dissolve(1.0),
+    Solid("#FFF"), Pause(1.0),
+    Solid("#FFF"), Dissolve(1.0),
+    True])
+
 define dissolve_scene_half = MultipleTransition([
     Solid("#000"), Pause(1.0),
     Solid("#000"), Dissolve(1.0),
