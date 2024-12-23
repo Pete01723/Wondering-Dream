@@ -21,6 +21,14 @@ init python:
 
         _windows_hidden = False
 
+define audio.rlroom = "<loop 0>bgm/roomrl.mp3"
+define audio.foresthole = "<loop 0>bgm/foresthole.mp3"
+define audio.forest = "<loop 3>bgm/forest.mp3"
+define audio.forestnight = "bgm/nightforest_scene2.mp3"
+define audio.run = "<loop 1>bgm/run.mp3"
+define audio.myst = "bgm/myst_scenes.mp3"
+define audio.goodend = "bgm/good_ending.mp3"
+
 image bg woods_day = 'bg/woods_day.png'
 image bg woods_night = 'bg/woods_night.png'
 image bg cave_out = 'bg/cave_out.png'
@@ -32,9 +40,14 @@ image bg forest_night = 'bg/forest_night.png'
 image bg forest1 = 'bg/forest_rl1.png'
 image bg forest2 = 'bg/forest_rl2.png'
 image bg forest_hole = 'bg/foresthole_rl.png'
-image bg loop = 'bg/loophole.png'
-image bg loop_light = 'bg/loophole2.png'
+image bg loop = 'bg/loophole_1.png'
+image bg loop_light = 'bg/loophole_2.png'
 image bg old_tree = 'bg/old_tree.png'
+image bg ending1 = 'bg/ending_1.png'
+image bg ending2 = 'bg/ending_2.png'
+image bg ending3 = 'bg/ending_3.png'
+image bg ending4 = 'bg/ending_4.png'
+
 image black = "#000000"
 
 image cat 1 = Composite((1920, 1080), (0, 0), "cat/cat_base.png", (0, 0), "cat/cat_neutral.png")
@@ -59,10 +72,10 @@ image mom 2 = "mother/mother_angry.png"
 image momsplash = "mother/mother_splash.png"
 
 define mc = Character('You', what_prefix = '"', what_suffix = '"', ctc = 'ctc', ctc_position = '')
-define m = Character('m_name', image = 'myst', what_prefix = '"', what_suffix = '"', ctc = 'ctc', ctc_position = '', dynamic = True)
-define c = Character('cat_name', image = 'cat', what_prefix = '"', what_suffix = '"', ctc = 'ctc', ctc_position = '', dynamic = True)
-define mons = Character('mons_name', image = 'mons', what_prefix = '"', what_suffix = '"', ctc = 'ctc', ctc_position = '', dynamic = True)
-define mom = Character('mom_name', image = 'mom', what_prefix = '"', what_suffix = '"', ctc = 'ctc', ctc_position = '', dynamic = True)
+define m = Character('m_name', image = 'myst', what_prefix = '"', what_suffix = '"', ctc = 'ctc', ctc_position = '', dynamic = True, who_color = "#7348e9")
+define c = Character('cat_name', image = 'cat', what_prefix = '"', what_suffix = '"', ctc = 'ctc', ctc_position = '', dynamic = True, who_color = "#7348e9")
+define mons = Character('mons_name', image = 'mons', what_prefix = '"', what_suffix = '"', ctc = 'ctc', ctc_position = '', dynamic = True, who_color = "#db0000")
+define mom = Character('mom_name', image = 'mom', what_prefix = '"', what_suffix = '"', ctc = 'ctc', ctc_position = '', dynamic = True, who_color = "#ee853f")
 
 define m_name = "Myst"
 define cat_name = "Cat"
