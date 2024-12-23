@@ -1,6 +1,8 @@
 ﻿label start:
+    stop music fadeout 2.0
     scene bg room1
     with dissolve_scene_full
+    play music rlroom
 
     "You suddenly woke up when you heard your mother screaming at you."
 
@@ -15,11 +17,16 @@
     if badend2:
         mc "..."
 
-        scene black
+        stop sound
+        scene bg ending4
         with dissolve_scene_full
+        window hide
+        play music goodend
 
-        "End"
+        $ pause(3.0)
 
+        window auto
+        stop music
         return
 
     menu:
@@ -65,6 +72,7 @@
     jump chap1
 
 label chap1:
+    stop music fadeout 2.0
     scene bg forest1
     with dissolve_scene_full
 
@@ -74,6 +82,7 @@ label chap1:
 
     scene bg forest_hole
     with dissolve_scene_half
+    play music foresthole
 
     mc "What is that?"
 
@@ -129,8 +138,10 @@ label chap1:
 
     "..."
 
+    stop music
     scene bg forest_day
     with dissolve_scene_full
+    play music forest
 
     "You woke up in the middle of the forest."
 
@@ -213,11 +224,13 @@ label chap1:
 
     "A minute later, the cat stops and hides in the bush."
 
+    stop music
     hide cat
 
     mc "Hey wait-"
 
     show myst 1
+    play music myst
 
     $ m_name = "???"
 
@@ -296,6 +309,7 @@ label chap1:
             "You follow her as it leads you deep into the forest."
 
             scene bg old_tree
+            play music forest
 
             "Few minutes later, You and the cat arrive in front of a giant old tree and in its roots there is a door-like."
 
@@ -321,6 +335,7 @@ label chap1:
 
             "As soon as you see it you run towards it."
 
+            stop music
             stop sound
             scene bg forest1
             with dissolve_scene_full_white
@@ -336,16 +351,22 @@ label chap1:
             "You never look back and you will never ever go back to that place again."
 
             stop sound
-            scene black
+            scene bg ending3
             with dissolve_scene_full
+            window hide
+            play music goodend
 
-            "Good End"
+            $ pause(3.0)
 
+            window auto
+            stop music
             return
             
-label badend:   
+label badend:
+    stop music   
     scene bg forest_night
     with dissolve_scene_full
+    play music forestnight
 
     "The night falls and you still haven't found your way home."
 
@@ -455,23 +476,30 @@ label badend:
 
                 mons "You are MINE!"
 
-                hide monschoke
-                show monsscare2
+                play sound "sfx/scare.ogg"
 
-                $ pause(3)
+                hide monschoke
+                show monsscare2:
+                    dizzy(1.5, 0.01)
+                window hide
+
+                $ pause(1)
 
                 hide monsscare2
 
-                scene black
-                with dissolve_scene_full
+                scene bg ending2
 
-                "Bad Ending"
+                $ pause(3.0)
 
+                window auto
+                stop music
                 return
 
             "Run":
+                stop music
                 hide mons
                 hide cat
+                play music run
 
                 "You run as fast as you can."
 
@@ -491,6 +519,7 @@ label badend:
                 "Suddenly, you fainted."
 
                 stop sound
+                stop music
 
                 jump start
 
@@ -508,16 +537,22 @@ label badend:
 
     mons "FROM ME!"
 
-    show monsscare1
+    play sound "sfx/scare.ogg"
 
-    $ pause(3)
+    show monsscare1:
+        dizzy(1.5, 0.01)
+    window hide
+
+    $ pause(1)
 
     hide monsscare1
     hide mons
 
-    scene black
-    with dissolve_scene_full
+    scene bg ending1
 
-    "Bad Ending"
+    $ pause(3.0)
+
+    window auto
+    stop music
 
     return
