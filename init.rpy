@@ -29,12 +29,7 @@ define audio.run = "<loop 1>bgm/run.mp3"
 define audio.myst = "bgm/myst_scenes.mp3"
 define audio.goodend = "bgm/good_ending.mp3"
 
-image bg woods_day = 'bg/woods_day.png'
-image bg woods_night = 'bg/woods_night.png'
-image bg cave_out = 'bg/cave_out.png'
-image bg cave_ins = 'bg/cave_ins.png'
 image bg room1 = 'bg/room_rl.png'
-image bg room2 = 'bg/room.png'
 image bg forest_day = 'bg/forest_day.png'
 image bg forest_night = 'bg/forest_night.png'
 image bg forest1 = 'bg/forest_rl1.png'
